@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CategoryController } from './category.controller';
 import { CategoryService } from './category.service';
-import { CreateCategoryDto } from './dto/create-category.dto';
 
 describe('CategoryController', () => {
   const mockCategoryService = {
