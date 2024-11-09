@@ -1,7 +1,7 @@
 import { INTEGER } from 'sequelize';
 import { Column, ForeignKey, Model, Table } from 'sequelize-typescript';
-import { Category } from 'src/category/entities/category.entity';
-import { Product } from 'src/products/entities/product.entity';
+import { Category } from '../../category/entities/category.entity';
+import { Product } from '../../products/entities/product.entity';
 
 @Table({
   tableName: 'ProductCategory',

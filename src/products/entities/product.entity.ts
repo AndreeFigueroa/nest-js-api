@@ -1,7 +1,7 @@
 import { INTEGER } from 'sequelize';
 import { Column, Table, Model, BelongsToMany } from 'sequelize-typescript';
-import { Category } from 'src/category/entities/category.entity';
-import { ProductCategory } from 'src/productCategory/entities/productCategory.entity';
+import { Category } from '../../category/entities/category.entity';
+import { ProductCategory } from '../../productCategory/entities/productCategory.entity';
 
 @Table({
   tableName: 'Product',
