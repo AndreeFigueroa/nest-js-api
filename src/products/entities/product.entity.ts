@@ -1,7 +1,7 @@
 import { INTEGER } from 'sequelize';
-import { Column, Table, Model, HasMany } from 'sequelize-typescript';
+import { Column, Table, Model, BelongsToMany } from 'sequelize-typescript';
 import { Category } from 'src/category/entities/category.entity';
-import { Format } from 'src/format/entities/format.entity';
+import { ProductCategory } from 'src/productCategory/entities/productCategory.entity';
 
 @Table({
   tableName: 'Product',
@@ -20,9 +20,6 @@ export class Product extends Model {
   @Column
   image: string;
 
-  @HasMany(() => Format)
-  formats: Format[];
-
-  @HasMany(() => Category)
+  @BelongsToMany(() => Category, () => ProductCategory)
   categories: Category[];
 }

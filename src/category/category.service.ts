@@ -34,4 +34,7 @@ export class CategoryService {
       where: { id },
     });
   }
+  getProducts(id: number) {
+    return this.categoryRepository.findByPk(id, { include: ['products'] });
+  }
 }

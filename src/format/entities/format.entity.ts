@@ -1,12 +1,5 @@
 import { INTEGER } from 'sequelize';
-import {
-  Column,
-  Table,
-  Model,
-  BelongsTo,
-  ForeignKey,
-} from 'sequelize-typescript';
-import { Product } from 'src/products/entities/product.entity';
+import { Column, Table, Model } from 'sequelize-typescript';
 
 @Table({
   tableName: 'Format',
@@ -21,17 +14,4 @@ export class Format extends Model {
 
   @Column
   format: string;
-
-  @Column
-  price: number;
-
-  @ForeignKey(() => Product)
-  @Column
-  productId: number;
-
-  @BelongsTo(() => Product, {
-    foreignKey: 'productId',
-    as: 'product',
-  })
-  product: Product;
 }
