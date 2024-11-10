@@ -18,9 +18,6 @@ export class Order extends Model {
   NumOrder: number;
 
   @Column
-  quantity: number;
-
-  @Column
   @ForeignKey(() => User)
   userId: number;
 

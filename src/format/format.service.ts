@@ -33,10 +33,4 @@ export class FormatService {
       where: { id },
     });
   }
-
-  findProductFormats(id: number) {
-    return this.formatRepository.findAll({
-      where: { productId: id },
-    });
-  }
 }

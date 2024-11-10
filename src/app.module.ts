@@ -11,7 +11,10 @@ import { CategoryModule } from './category/category.module';
 import { ConfigModule } from '@nestjs/config';
 import { OrderModule } from './order/order.module';
 import { ProductFormatModule } from './product_format/product_format.module';
-import configuration from './config/configuration';
+import { validate } from 'env.validate';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: process.cwd() + '/.env.development' });
 
 @Module({
   imports: [
@@ -22,9 +25,8 @@ import configuration from './config/configuration';
     FormatModule,
     CategoryModule,
     ConfigModule.forRoot({
-      envFilePath: '.env',
-      isGlobal: true,
-      load: [configuration],
+      validate,
+      envFilePath: `${process.env.NODE_ENV}.env`,
     }),
     OrderModule,
     ProductFormatModule,

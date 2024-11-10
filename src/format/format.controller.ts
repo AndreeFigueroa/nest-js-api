@@ -41,8 +41,4 @@ export class FormatController {
   remove(@Param('id') id: string) {
     return this.formatService.remove(+id);
   }
-  @Get('product/:id')
-  findProductFormats(@Param('id') id: string) {
-    return this.formatService.findProductFormats(+id);
-  }
 }

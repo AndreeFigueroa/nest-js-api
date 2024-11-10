@@ -12,10 +12,13 @@ export class Category extends Model {
     autoIncrement: true,
   })
   id: number;
+
   @Column
   name: string;
+
   @Column
   description: string;
+
   @Column
   image: string;
 
